@@ -1,0 +1,27 @@
+page-results {
+    ion-badge{
+        font-size: 40px;
+    }
+    
+    ion-label{
+        font-size: 40px;
+    }
+    
+    ion-label div{
+        margin-top: 20px;
+        font-size: 15px;
+    }
+    
+    .correct{
+        background: green !important;
+        color:#fff !important;
+    }
+    
+    
+    .incorrect{
+        background: red !important;
+        color:#fff !important;
+    }
+}
+
+

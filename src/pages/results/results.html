@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-navbar hideBackButton color="primary">
+    <ion-title>
+      RESULTADOS
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+
+  <ion-list>
+    <ion-item *ngIf="newRecord">
+        <ion-badge item-center>NEW RECORD</ion-badge>
+    </ion-item>
+    <ion-item>
+        Record: {{currentRecord}}
+    </ion-item>
+    <ion-item>
+        Puntos: {{points}}
+    </ion-item>
+    <ion-item>
+      Correctos: {{correct}}
+      <div *ngIf="correctList.length > 0">
+      <ion-grid>
+        <ion-row class="correct" color="primary">
+          <ion-col col-4>Español</ion-col>
+          <ion-col col-4>Ingles</ion-col>
+          <ion-col col-4>Ingresado</ion-col>
+        </ion-row>
+        <ion-row *ngFor="let correct of correctList">
+          <ion-col col-4>{{correct.originalEs}} </ion-col>
+          <ion-col col-4>{{correct.originalEn}}</ion-col>
+          <ion-col col-4>{{correct.ingresado}}</ion-col>
+        </ion-row>
+      </ion-grid>
+      </div>
+    </ion-item>
+    <ion-item>
+      Errados: {{incorrect}}
+      <div *ngIf="incorrectList.length > 0">
+      <ion-grid>
+        <ion-row class="incorrect" color="primary">
+          <ion-col col-4>Español</ion-col>
+          <ion-col col-4>Ingles</ion-col>
+          <ion-col col-4>Ingresado</ion-col>
+        </ion-row>
+        <ion-row *ngFor="let incorrecta of incorrectList">
+          <ion-col col-4>{{incorrecta.originalEs}} </ion-col>
+          <ion-col col-4>{{incorrecta.originalEn}}</ion-col>
+          <ion-col col-4>{{incorrecta.ingresado}}</ion-col>
+        </ion-row>
+      </ion-grid>
+      </div>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button full large margin-top (click)="volverAJugar()">Volver a jugar</button>
+</ion-content>

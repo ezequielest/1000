@@ -1,0 +1,23 @@
+page-playing {
+    ion-badge{
+        font-size: 40px;
+    }
+    
+    ion-content{
+        font-size: 40px;
+    }
+    
+    ion-label{
+        font-size: 40px;
+    }
+    
+    ion-navbar button{
+        display: none;
+    }
+    
+    button.back-button{
+        display: none;
+    }
+}
+
+$text-input-highlight-color-valid:#f00 !important; 
