@@ -1,21 +1,22 @@
 <ion-header>
   <ion-navbar hideBackButton color="primary">
-    <ion-title>1000 WORDS</ion-title>
+    <ion-title id="quedan">Quedan <ion-badge color="secondary" item-end>{{minutes | number:'2.0-0'}}:{{seconds | number:'2.0-0'}}</ion-badge></ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding *ngIf="word">
-    Quedan <ion-badge item-end>{{minutes | number:'2.0-0'}}:{{seconds | number:'2.0-0'}}</ion-badge>
 
   <ion-list>
     <ion-item padding>
       <ion-label margin-top floating>{{word.en}}</ion-label>
-      <ion-input margin-top type="text" #palabra (keyup.enter)="getResult(palabra.value)" [(ngModel)]="valueDefault"></ion-input>
-      <button ion-button full large margin-top (click)="getResult(palabra.value)">Siguiente</button>
+      <ion-input type="text" #palabra (keyup.enter)="verificResult(palabra.value)" [(ngModel)]="valueDefault"></ion-input>
+    </ion-item>
+    <ion-item padding-top>
+      <button color="danger" ion-button full large (click)="terminar()">Terminar</button>
     </ion-item>
   </ion-list>
 
-  <button ion-button full large *ngIf="!corriendo" (click)="resetGame()">Reset</button>
+  <button ion-button color="danger" full large *ngIf="!corriendo" (click)="resetGame()">Reset</button>
 
   <!--<br><br>
   Pista

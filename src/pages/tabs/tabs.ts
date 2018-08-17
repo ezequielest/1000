@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 
 import { AboutPage } from '../about/about';
 import { ContactPage } from '../contact/contact';
-import { PlayingPage } from '../playing/playing';
 import { InicioPage } from '../inicio/inicio';
 
 @Component({
@@ -16,7 +15,6 @@ export class TabsPage {
 
 
   constructor() {
-
   }
 
 }

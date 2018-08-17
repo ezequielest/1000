@@ -1,0 +1,27 @@
+page-time {
+
+    ion-item{
+        height: 70vh;
+    }
+
+
+    button{
+    
+        display: flex!important;
+        align-content: center!important;
+        align-items: center!important;
+        justify-content: center !important;
+        
+        span.prox{
+            font-size: 10px;
+        }
+    }
+
+    ion-content{
+    background-image: url('../../assets/imgs/back1.jpg');
+    background-size: cover;
+    }
+    .item-md{
+        background:transparent !important;
+    }
+}

@@ -4,11 +4,14 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-  <ion-list >
+<ion-content class="backInitial">
+
+  <ion-list>
     <ion-item>
-        <button ion-button full large (click)="comenzar()" class="centerEz">COMENZAR</button>
+        <button ion-button full large (click)="seleccionarTiempo()" class="centerEz">Ingles</button>
+        <button ion-button full large disabled (click)="seleccionarTiempo()" class="centerEz">Español <span class="prox" margin-left>(proximamente)</span></button>
     </ion-item>
   </ion-list>
+
 
 </ion-content>

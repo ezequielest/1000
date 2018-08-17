@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { PlayingPage } from '../playing/playing';
+import { TimePage } from '../time/time';
 
 @Component({
   selector: 'page-inicio',
@@ -10,9 +10,13 @@ export class InicioPage {
   
   constructor(public navCtrl: NavController) {}
 
-  comenzar(){
-    this.navCtrl.push(PlayingPage);
+  opcionJuego;
+  minutos;
+
+  seleccionarTiempo(){
+    this.navCtrl.push(TimePage);
   }
+
 
 }
 

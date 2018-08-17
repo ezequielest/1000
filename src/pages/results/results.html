@@ -3,6 +3,10 @@
     <ion-title>
       RESULTADOS
     </ion-title>
+
+    <ion-buttons end>
+      <button ion-button (click)="volverAJugar()"><ion-badge color="danger" item-center>Volver a jugar</ion-badge></button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
@@ -54,6 +58,4 @@
       </div>
     </ion-item>
   </ion-list>
-
-  <button ion-button full large margin-top (click)="volverAJugar()">Volver a jugar</button>
 </ion-content>

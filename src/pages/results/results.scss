@@ -1,17 +1,30 @@
 page-results {
     ion-badge{
-        font-size: 40px;
+        //font-size: 40px;
+        color:#fff;
     }
     
     ion-label{
-        font-size: 40px;
+        font-size: 25px;
+        color:#fff;
     }
     
     ion-label div{
         margin-top: 20px;
         font-size: 15px;
+        color:#fff;
+    }
+
+    ion-content{
+        background-image: url('../../assets/imgs/back1.jpg');
+        background-size: cover;
+        color:#fff;
     }
     
+    .item-md{
+        background:rgba(12, 5, 20, 0.6)
+    }
+
     .correct{
         background: green !important;
         color:#fff !important;

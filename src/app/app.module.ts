@@ -14,6 +14,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { WordsProvider } from '../providers/words/words';
 import { ResultsPage } from '../pages/results/results';
 import { HttpModule } from '../../node_modules/@angular/http';
+import { TimePage } from '../pages/time/time';
 
 @NgModule({
   declarations: [
@@ -23,12 +24,13 @@ import { HttpModule } from '../../node_modules/@angular/http';
     PlayingPage,
     TabsPage,
     InicioPage,
-    ResultsPage
+    ResultsPage,
+    TimePage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpModule
+    HttpModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -38,13 +40,14 @@ import { HttpModule } from '../../node_modules/@angular/http';
     PlayingPage,
     TabsPage,
     InicioPage,
-    ResultsPage
+    ResultsPage,
+    TimePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    WordsProvider
+    WordsProvider,
   ]
 })
 export class AppModule {}

@@ -1,7 +1,7 @@
 //import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Words,Data } from '../../models/words.model';
-import { HttpModule } from "@angular/http";
+import { Data } from '../../models/words.model';
+
 
 @Injectable()
 export class WordsProvider {
@@ -12,12 +12,14 @@ export class WordsProvider {
   incorrectList = [];
   correctList = [];
   data = new Data();
+  min;
+  seg;
 
   record;
   currentRecord;
   newRecord = false;
 
-  constructor(private _http:HttpModule) {
+  constructor() {
     this.words = this.data.leerArchivo();
   }
 
@@ -73,6 +75,17 @@ export class WordsProvider {
 
   setRecord(record){
     localStorage.setItem('record', record);
+  }
+
+  setTime(min,seg){
+    this.min=min;
+    this.seg=seg;
+  }
+
+  getMinutesSeconds(){
+    let time = [this.min, this.seg];
+
+    return time;
   }
 
 }

@@ -1,14 +1,28 @@
 page-playing {
+    
     ion-badge{
         font-size: 40px;
+        color:#fff !important;
     }
     
     ion-content{
+        color:#fff !important;
         font-size: 40px;
+        background-image: url('../../assets/imgs/back1.jpg');
+        background-size: cover;
+    }
+    
+    input{
+        color:#fff !important;
+    }
+    
+    .item-md{
+        background:rgba(12, 5, 20, 0.6)
     }
     
     ion-label{
         font-size: 40px;
+        color:#fff !important;
     }
     
     ion-navbar button{

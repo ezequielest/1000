@@ -12,16 +12,18 @@ export class PlayingPage {
   words = [];
   word;
   valueDefault = "";
-  minutes = 0;
-  seconds = 15;
   corriendo = true;
   listCorrect = [];
   listIncorrect = [];
   pista = "";
+  seconds = 0;
+  minutes = 0;
+  refresh;
 
   constructor(public navCtrl: NavController,
               public _words:WordsProvider) {
-
+      
+      this.setTime();
       this.iniciarCount();
       this.words= this._words.getWords();
       this.getRandom();
@@ -30,9 +32,8 @@ export class PlayingPage {
 
   iniciarCount(){
     this.corriendo = true;
-    this.seconds = 15;
 
-    let refresh = setInterval(() => {
+    this.refresh = setInterval(() => {
 
       if (this.seconds == 0){
 
@@ -41,7 +42,7 @@ export class PlayingPage {
           this.seconds = 59;
         }else{
           this.corriendo = false;
-          clearInterval(refresh);
+          clearInterval(this.refresh);
           this._words.setListResult(this.listIncorrect, this.listCorrect);
           this.navCtrl.push(ResultsPage); //resultado final
         }
@@ -61,24 +62,27 @@ export class PlayingPage {
     this.words.splice(number,1);
   }
 
-  getResult(value){
+  verificResult(value:string){
+
+    value = this.cleanAcentsString(value).toLocaleLowerCase();
 
     if (this.word.es.length > 1){
+
       this.word.es.forEach(element => {
-          if (element == value){
+
+          if (element.toLocaleLowerCase() == value){
             this._words.addCorrect();
-            this.listCorrect.push({'originalEs': this.word.es, 'originalEn': this.word.en, 'ingresado': value})
+            this.listCorrect.push({'originalEs': this.word.es.toLocaleLowerCase(), 'originalEn': this.word.en.toLocaleLowerCase(), 'ingresado': value})
           }
+          
       });
 
-    }else if (value.trim() == this.word.es[0]){
+    }else if ( value.trim() == this.cleanAcentsString(this.word.es[0]).toLocaleLowerCase() ){
       this._words.addCorrect();
       this.listCorrect.push({'originalEs': this.word.es, 'originalEn': this.word.en, 'ingresado': value})
     }else{
-
-      this.listIncorrect.push({'originalEs': this.word.es, 'originalEn': this.word.en, 'ingresado': value})
-
       this._words.addIncorrect();
+      this.listIncorrect.push({'originalEs': this.word.es, 'originalEn': this.word.en, 'ingresado': value})
     }
 
 
@@ -93,7 +97,6 @@ export class PlayingPage {
 
 
   generateClue(){
-
     let row:string = "";
     let firstLetter = this.word.es[0];
     for (let index = 0; index < this.word.es.length -1; index++) {
@@ -101,6 +104,30 @@ export class PlayingPage {
     }
 
     this.pista = '<h3>'+ firstLetter + ' ' + row + '</h3>';
+  }
+
+  setTime(){
+    let time = this._words.getMinutesSeconds();
+    this.minutes = time[0];
+    this.seconds = time[1];
+  }
+
+  terminar(){
+    this.corriendo = false;
+    clearInterval(this.refresh);
+    this._words.setListResult(this.listIncorrect, this.listCorrect);
+    this.navCtrl.push(ResultsPage); //resultado final
+  }
+
+  cleanAcentsString(cadena){
+    cadena = cadena
+                .replace(/á/gi,"a")
+                .replace(/é/gi,"e")
+                .replace(/í/gi,"i")
+                .replace(/ó/gi,"o")
+                .replace(/ú/gi,"u");
+
+    return cadena
   }
 
 }
