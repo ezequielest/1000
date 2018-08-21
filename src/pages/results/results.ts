@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { WordsProvider } from '../../providers/words/words';
-import { PlayingPage } from '../playing/playing';
+import { CountdownPage } from '../countdown/countdown';
 
 @Component({
   selector: 'page-results',
@@ -13,14 +13,20 @@ export class ResultsPage {
   incorrect;
   incorrectList;
   correctList;
-
-
   points = 0;
   currentRecord;
   newRecord = false; 
 
   constructor(public navCtrl: NavController,
               public _words:WordsProvider) {
+
+      let elements = document.querySelectorAll(".tabbar");
+
+      if (elements != null) {
+          Object.keys(elements).forEach(element => {
+              elements[element].style.display = 'flex';
+          });
+      }
 
       this.correct = _words.getCorrect();
       this.incorrect = _words.getIncorrect();
@@ -32,7 +38,7 @@ export class ResultsPage {
   }
 
   volverAJugar(){
-    this.navCtrl.push(PlayingPage)
+    this.navCtrl.push(CountdownPage)
     this._words.resetValues();
   }
 

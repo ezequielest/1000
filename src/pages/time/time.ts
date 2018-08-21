@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { PlayingPage } from '../playing/playing';
 import { WordsProvider } from '../../providers/words/words';
+import { CountdownPage } from '../countdown/countdown';
 
 @IonicPage()
 @Component({
@@ -23,7 +23,7 @@ export class TimePage {
   }
 
   comenzar(){
-    this.navCtrl.push(PlayingPage);
+    this.navCtrl.push(CountdownPage);
   }
 
 }

@@ -15,6 +15,8 @@ import { WordsProvider } from '../providers/words/words';
 import { ResultsPage } from '../pages/results/results';
 import { HttpModule } from '../../node_modules/@angular/http';
 import { TimePage } from '../pages/time/time';
+import { CountdownPage } from '../pages/countdown/countdown';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { TimePage } from '../pages/time/time';
     TabsPage,
     InicioPage,
     ResultsPage,
-    TimePage
+    TimePage,
+    CountdownPage
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,8 @@ import { TimePage } from '../pages/time/time';
     TabsPage,
     InicioPage,
     ResultsPage,
-    TimePage
+    TimePage,
+    CountdownPage
   ],
   providers: [
     StatusBar,

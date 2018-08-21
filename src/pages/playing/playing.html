@@ -1,6 +1,11 @@
 <ion-header>
   <ion-navbar hideBackButton color="primary">
-    <ion-title id="quedan">Quedan <ion-badge color="secondary" item-end>{{minutes | number:'2.0-0'}}:{{seconds | number:'2.0-0'}}</ion-badge></ion-title>
+    <ion-title id="quedan"><ion-badge [ngClass]="{'verde': minutes > 0 || seconds > 10, 'rojo': minutes == 0 && seconds <= 10}" item-end>{{minutes | number:'2.0-0'}}:{{seconds | number:'2.0-0'}}</ion-badge></ion-title>
+    
+    <ion-buttons end>
+      <button ion-button (click)="terminar()"><ion-badge color="danger" item-center>Terminar juego</ion-badge></button>
+    </ion-buttons>
+  
   </ion-navbar>
 </ion-header>
 
@@ -11,8 +16,8 @@
       <ion-label margin-top floating>{{word.en}}</ion-label>
       <ion-input type="text" #palabra (keyup.enter)="verificResult(palabra.value)" [(ngModel)]="valueDefault"></ion-input>
     </ion-item>
-    <ion-item padding-top>
-      <button color="danger" ion-button full large (click)="terminar()">Terminar</button>
+    <ion-item>
+      <button color="secondary" ion-button full large (click)="verificResult(palabra.value)">Próxima</button>
     </ion-item>
   </ion-list>
 

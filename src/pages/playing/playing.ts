@@ -19,14 +19,24 @@ export class PlayingPage {
   seconds = 0;
   minutes = 0;
   refresh;
+  playing = false;
 
   constructor(public navCtrl: NavController,
               public _words:WordsProvider) {
+      
+      let elements = document.querySelectorAll(".tabbar");
+
+      if (elements != null) {
+          Object.keys(elements).map((key) => {
+              elements[key].style.display = 'none';
+          });
+      }
       
       this.setTime();
       this.iniciarCount();
       this.words= this._words.getWords();
       this.getRandom();
+      this.playing = true;
       //this.generateClue();
   }
 

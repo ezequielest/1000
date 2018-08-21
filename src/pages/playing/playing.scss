@@ -1,7 +1,19 @@
 page-playing {
-    
+
+    .verde{
+        background-color: map-get($colors, secondary);
+    }
+    .rojo{
+        background-color: map-get($colors, danger);
+    }
+
+    #quedan{
+        ion-badge{
+            font-size: 40px;
+        }
+    }
+
     ion-badge{
-        font-size: 40px;
         color:#fff !important;
     }
     
@@ -31,6 +43,18 @@ page-playing {
     
     button.back-button{
         display: none;
+    }
+
+    .scroll-content{
+        display: flex!important;
+        align-content: center!important;
+        align-items: center!important;
+        justify-content: center !important;
+        width: 100% !important;
+    }
+
+    ion-list{
+        width: 100%;
     }
 }
 
