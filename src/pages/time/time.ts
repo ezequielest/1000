@@ -17,8 +17,10 @@ export class TimePage {
     console.log('ionViewDidLoad TimePage');
   }
 
-  setTime(min,seg){
-    this._words.setTime(min,seg);
+  selectOpt(select){
+    //this._words.setTime(min,seg);
+    this._words.resetValues();
+    this._words.setTimePlaySelect(select);
     this.comenzar();
   }
 

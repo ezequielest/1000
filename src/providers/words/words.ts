@@ -16,11 +16,13 @@ export class WordsProvider {
   seg;
 
   record;
-  currentRecord;
   newRecord = false;
+  timePlaySelect = 0;
 
   constructor() {
+    this.verificarRecord();
     this.words = this.data.leerArchivo();
+    
   }
 
   getWords(){
@@ -62,24 +64,67 @@ export class WordsProvider {
     return this.incorrectList;
   }
 
-  getRecord(){
+
+  verificarRecord(){
     let record = localStorage.getItem('record');
-    console.log(record)
+
     if (record === null){
-      return this.currentRecord = 0;
+
+        let Orecord = {
+            '1': 0, 
+            '2': 0, 
+            '3': 0
+        };
+
+        this.record = Orecord;
+
+        let Srecord = JSON.stringify(Orecord);
+
+        localStorage.setItem('record', Srecord);
+
     }else{
-      return this.currentRecord = record;
+
+      this.record = JSON.parse(record);
+
+    }
+  }
+
+  getRecord(){
+      return this.record[this.timePlaySelect];
+  }
+
+  setTimePlaySelect(timePlaySelect){
+
+    this.timePlaySelect = timePlaySelect; 
+
+    switch (timePlaySelect) {
+      case 1:
+        this.min=0;
+        this.seg=30;
+        break;
+      case 2:
+        this.min=1;
+        this.seg=0;
+        break;
+      case 3:
+        this.min=3;
+        this.seg=0;
+        break;
+      default:
+        break;
     }
 
   }
 
   setRecord(record){
-    localStorage.setItem('record', record);
+    this.record[this.timePlaySelect] = record;
+
+    localStorage.setItem('record', JSON.stringify(this.record));
   }
 
   setTime(min,seg){
-    this.min=min;
-    this.seg=seg;
+    this.min = min;
+    this.seg = seg;
   }
 
   getMinutesSeconds(){
