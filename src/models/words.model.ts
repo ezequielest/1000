@@ -48,16 +48,26 @@ export class Data{
             let row = element.substring(0, element.length - 1);
             let dataRow= row.split('\t');
 
+            let variosSigEng = dataRow[1].split('/');
+
+            let posibilidadesEng = []
+            variosSigEng.forEach(element =>{
+
+                posibilidadesEng.push(element);
+                
+            });
+            
+            
             let variosSig = dataRow[2].split('/');
             
-            let posibilidades = []
+            let posibilidadesEsp = []
             variosSig.forEach(element =>{
 
-                posibilidades.push(element);
+                posibilidadesEsp.push(element);
                 
             });
 
-            arregloObj.push({'id': dataRow[0],'en': dataRow[1], 'es': posibilidades})
+            arregloObj.push({'id': dataRow[0],'en': posibilidadesEng, 'es': posibilidadesEsp})
 
         });
 

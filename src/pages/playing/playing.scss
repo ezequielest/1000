@@ -29,12 +29,17 @@ page-playing {
     }
     
     .item-md{
-        background:rgba(12, 5, 20, 0.6)
+        background:rgba(12, 5, 20, 0.3)
     }
     
     ion-label{
-        font-size: 40px;
+        font-size: 3em;
         color:#fff !important;
+
+    }
+
+    .text-input{
+        font-size: 1.5em;
     }
     
     ion-navbar button{
@@ -45,16 +50,12 @@ page-playing {
         display: none;
     }
 
-    .scroll-content{
-        display: flex!important;
-        align-content: center!important;
-        align-items: center!important;
-        justify-content: center !important;
-        width: 100% !important;
-    }
-
     ion-list{
         width: 100%;
+    }
+
+    .terminar{
+        font-size: 2em;
     }
 }
 

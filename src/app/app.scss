@@ -15,6 +15,38 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
+@font-face {
+    font-family: 'fortnite';
+    src: url('../assets/fonts/Fortnite.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+*{
+    font-family: 'fortnite';
+    letter-spacing: 1px;
+}
+
 .mostrar{
     display: none;
+}
+
+.cabecera{
+    font-size: 1.5em;
+    
+    &.center{
+        text-align: center;
+    }
+    
+}
+
+.content-button{
+    font-size: 1.5em;
+}
+
+.tab-button-icon{
+    font-size: 1.4em !important;
+}
+
+.tab-button-text{
+    font-size: 1.4em !important;
+    margin-top: 0px !important;
 }

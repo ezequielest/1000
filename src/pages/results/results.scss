@@ -5,13 +5,13 @@ page-results {
     }
     
     ion-label{
-        font-size: 25px;
+        font-size: 1.5em;
         color:#fff;
     }
     
     ion-label div{
         margin-top: 20px;
-        font-size: 15px;
+        font-size: 0.8em;
         color:#fff;
     }
 
@@ -23,17 +23,6 @@ page-results {
     
     .item-md{
         background:rgba(12, 5, 20, 0.6)
-    }
-
-    .correct{
-        background: green !important;
-        color:#fff !important;
-    }
-    
-    
-    .incorrect{
-        background: red !important;
-        color:#fff !important;
     }
 }
 

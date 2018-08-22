@@ -14,6 +14,7 @@ export class WordsProvider {
   data = new Data();
   min;
   seg;
+  gameType = "";
 
   record;
   newRecord = false;
@@ -27,6 +28,14 @@ export class WordsProvider {
 
   getWords(){
     return this.words;
+  }
+
+  setGame(game){
+    this.gameType = game;
+  }
+
+  getGameType(){
+    return this.gameType;
   }
 
   addIncorrect(){
@@ -64,6 +73,7 @@ export class WordsProvider {
     return this.incorrectList;
   }
 
+  /*Record*******/
 
   verificarRecord(){
     let record = localStorage.getItem('record');
@@ -76,9 +86,11 @@ export class WordsProvider {
             '3': 0
         };
 
-        this.record = Orecord;
+        let points = {'EnSp': Orecord, 'SpEn': Orecord}
 
-        let Srecord = JSON.stringify(Orecord);
+        this.record = points;
+
+        let Srecord = JSON.stringify(points);
 
         localStorage.setItem('record', Srecord);
 
@@ -90,8 +102,19 @@ export class WordsProvider {
   }
 
   getRecord(){
-      return this.record[this.timePlaySelect];
+      console.log(this.record)
+      console.log(this.gameType)
+      return this.record[this.gameType][this.timePlaySelect];
   }
+
+  setRecord(record){
+    this.record[this.gameType][this.timePlaySelect] = record;
+
+    localStorage.setItem('record', JSON.stringify(this.record));
+  }
+
+   /*******Record*/
+
 
   setTimePlaySelect(timePlaySelect){
 
@@ -114,12 +137,6 @@ export class WordsProvider {
         break;
     }
 
-  }
-
-  setRecord(record){
-    this.record[this.timePlaySelect] = record;
-
-    localStorage.setItem('record', JSON.stringify(this.record));
   }
 
   setTime(min,seg){

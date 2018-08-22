@@ -1,4 +1,4 @@
-1	the	el/la/los/las
+﻿1	the	el/la/los/las
 2	of	de
 3	to	a/hacia
 4	and	y
@@ -6,7 +6,7 @@
 6	in	en
 7	is	es
 8	it	eso
-9	you	tú/ustedes 
+9	you	tú/ustedes/vos
 10	that	ese
 11	he	él
 12	was	estaba
@@ -55,14 +55,14 @@
 55	if	Si (como condicional)
 56	will	será
 57	way	camino
-58	about	acerca de
+58	about	acerca de/sobre
 59	many	muchos
 60	then	entonces
 61	them	ellos
 62	write	escribir
 63	would	haría
-64	like	me gusta
-65	so	asi que
+64	like	gustar/gusta/como
+65	so	asi que/entonces
 66	these	estas
 67	her	su (de ella)
 68	long	largo
@@ -80,7 +80,7 @@
 80	come	ven
 81	did	hizo
 82	number	número
-83	sound	sonar
+83	sound	sonido/sonar
 84	no	no
 85	most	más
 86	people	gente
@@ -121,7 +121,7 @@
 121	good	bueno
 122	me	yo
 123	give	dar
-124	our	nuestra
+124	our	nuestra/nuestro
 125	under	debajo
 126	name	nombre
 127	very	muy
@@ -135,7 +135,7 @@
 135	help	ayuda
 136	low	bajo
 137	line	línea
-138	differ	diferir de
+138	differ	diferir
 139	turn	giro
 140	cause	porque
 141	much	mucho
@@ -266,9 +266,9 @@
 266	those	aquellos
 267	both	ambos
 268	mark	marca
-269	often	a menudo
+269	often	a menudo/con frecuencia
 270	letter	carta
-271	until	hasta/ hasta qu
+271	until	hasta/hasta que
 272	mile	milla
 273	river	río
 274	car	coche
@@ -344,7 +344,7 @@
 344	knew	Sabía
 345	pass	pasar
 346	since	desde
-347	top	parte superior
+347	top	tope/maximo/parte superior
 348	whole	todo
 349	king	Rey
 350	space	espacio
@@ -504,7 +504,7 @@
 504	wave	ola
 505	drop	soltar
 506	heart	corazón
-507	am	a.m
+507	am	am
 508	present	presente
 509	heavy	pesado
 510	dance	baile
@@ -926,7 +926,7 @@
 926	score	Puntuación
 927	apple	manzana
 928	bought	compró
-929	led	LED
+929	led	condujo/LED
 930	pitch	tono
 931	coat	capa
 932	mass	masa
@@ -966,7 +966,7 @@
 966	share	compartir
 967	station	estación
 968	dad	papá
-969	bread	pan de molde
+969	bread	pan
 970	charge	cargar
 971	proper	apropiado
 972	bar	bar
@@ -976,7 +976,7 @@
 976	duck	pato
 977	instant	instante
 978	market	mercado
-979	degree	la licenciatura
+979	degree	licenciatura
 980	populate	poblar
 981	chick	polluelo
 982	dear	querido

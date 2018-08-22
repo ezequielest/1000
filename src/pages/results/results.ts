@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { WordsProvider } from '../../providers/words/words';
 import { CountdownPage } from '../countdown/countdown';
+import { ResultsListPage } from '../results-list/results-list';
 
 @Component({
   selector: 'page-results',
@@ -56,6 +57,14 @@ export class ResultsPage {
       this._words.setRecord(this.points);
     }
     
+  }
+
+  verListado(val){
+    if (val == 'correct'){
+      this.navCtrl.push(ResultsListPage,{'list': this.correctList, 'tipoList': 'correct'});
+    }else{
+      this.navCtrl.push(ResultsListPage,{'list': this.incorrectList, 'tipoList': 'incorrect'});
+    }
   }
 
 

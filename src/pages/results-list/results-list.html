@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Lista de resultados</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <ion-item>
+          <ion-grid>
+            <!--<ion-row class="correct" color="primary">-->
+            <ion-row [ngClass]="{'correct': tipoList == 'correct', 'incorrect': tipoList == 'incorrect'}" class="correct" color="primary">
+              <ion-col col-4>Español</ion-col>
+              <ion-col col-4>Ingles</ion-col>
+              <ion-col col-4>Ingresado</ion-col>
+            </ion-row>
+            <ion-row *ngFor="let word of wordsList">
+              <ion-col col-4>{{word.originalEs}} </ion-col>
+              <ion-col col-4>{{word.originalEn}}</ion-col>
+              <ion-col col-4>{{word.ingresado}}</ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+      </ion-list>
+</ion-content>

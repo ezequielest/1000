@@ -17,16 +17,23 @@ page-inicio {
 
 
         button{
-        
+            
+
             display: flex!important;
             align-content: center!important;
             align-items: center!important;
             justify-content: center !important;
             
             span.prox{
-                font-size: 10px;
+                font-size: 0.6em;
             }
         }
     }
 
+    ion-title{
+        
+        &.titulo{
+            font-size: 3em;
+        }
+    }
 }

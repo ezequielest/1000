@@ -3,7 +3,7 @@
     <ion-title id="quedan"><ion-badge [ngClass]="{'verde': minutes > 0 || seconds > 10, 'rojo': minutes == 0 && seconds <= 10}" item-end>{{minutes | number:'2.0-0'}}:{{seconds | number:'2.0-0'}}</ion-badge></ion-title>
     
     <ion-buttons end>
-      <button ion-button (click)="terminar()"><ion-badge color="danger" item-center>Terminar juego</ion-badge></button>
+      <button ion-button (click)="terminar()"><ion-badge color="danger" item-center><span class="terminar">Terminar</span></ion-badge></button>
     </ion-buttons>
   
   </ion-navbar>
@@ -11,21 +11,16 @@
 
 <ion-content padding *ngIf="word">
 
-  <ion-list>
-    <ion-item padding>
-      <ion-label margin-top floating>{{word.en}}</ion-label>
-      <ion-input type="text" #palabra (keyup.enter)="verificResult(palabra.value)" [(ngModel)]="valueDefault"></ion-input>
-    </ion-item>
-    <ion-item>
-      <button color="secondary" ion-button full large (click)="verificResult(palabra.value)">Próxima</button>
-    </ion-item>
-  </ion-list>
+  <div *ngIf="gameType == 'EnSp'; else espanol">
+    <playing-box [word]="word.en" (result)="verificEnSp($event)"></playing-box>
+  </div>
+
+  <ng-template #espanol>
+    <playing-box [word]="word.es" (result)="verificSpEn($event)"></playing-box>
+  </ng-template>
 
   <button ion-button color="danger" full large *ngIf="!corriendo" (click)="resetGame()">Reset</button>
 
-  <!--<br><br>
-  Pista
-  <div [innerHTML]="pista"></div>
-  -->
-
 </ion-content>
+
+

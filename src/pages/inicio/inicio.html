@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar hideBackButton color="primary">
-    <ion-title>1000 WORDS</ion-title>
+    <ion-title><div class="cabecera center">1000 WORDS</div></ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -8,8 +8,9 @@
 
   <ion-list>
     <ion-item>
-        <button ion-button full large (click)="seleccionarTiempo()" class="centerEz">Ingles</button>
-        <button ion-button full large disabled (click)="seleccionarTiempo()" class="centerEz">Español <span class="prox" margin-left>(proximamente)</span></button>
+        <button ion-button full large (click)="selectGame('EnSp')" class="centerEz"><span class="content-button">Ing  <ion-icon name="md-arrow-dropright"></ion-icon> Esp</span></button>
+        <button ion-button full large (click)="selectGame('SpEn')" class="centerEz"><span class="content-button">Esp  <ion-icon name="md-arrow-dropright"></ion-icon> Ing</span></button>
+        <button ion-button full large (click)="selectGame('History')" class="centerEz" disabled><span class="content-button">History <span class="prox" margin-left>(proximamente)</span></span></button>
     </ion-item>
   </ion-list>
 

@@ -24,7 +24,39 @@
         Puntos: {{points}}
     </ion-item>
     <ion-item>
-      Correctos: {{correct}}
+      Correctas: {{correct}} 
+      <div style="display: inline;" *ngIf="correctList.length > 0">
+        <button ion-button color="secondary" (click)="verListado('correct')">
+              Ver Listado
+        </button>
+      </div>
+    </ion-item>
+    <ion-item>
+      Incorrectas: {{incorrect}}  
+      <div style="display: inline;" *ngIf="incorrectList.length > 0">
+          <button color="danger" ion-button (click)="verListado('incorrect')">
+              Ver Listado
+          </button>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<!--
+  old
+
+    <ion-list>
+    <ion-item *ngIf="newRecord">
+        <ion-badge item-center>NEW RECORD</ion-badge>
+    </ion-item>
+    <ion-item>
+        Record: {{currentRecord}}
+    </ion-item>
+    <ion-item>
+        Puntos: {{points}}
+    </ion-item>
+    <ion-item>
+      Correctas: {{correct}} <div *ngIf="correctList.length > 0">Ver</div>
       <div *ngIf="correctList.length > 0">
       <ion-grid>
         <ion-row class="correct" color="primary">
@@ -41,7 +73,7 @@
       </div>
     </ion-item>
     <ion-item>
-      Errados: {{incorrect}}
+      Incorrectas: {{incorrect}}  <div *ngIf="incorrectList.length > 0">Ver</div>
       <div *ngIf="incorrectList.length > 0">
       <ion-grid>
         <ion-row class="incorrect" color="primary">
@@ -58,4 +90,5 @@
       </div>
     </ion-item>
   </ion-list>
-</ion-content>
+
+-->

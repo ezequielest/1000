@@ -16,6 +16,8 @@ import { ResultsPage } from '../pages/results/results';
 import { HttpModule } from '../../node_modules/@angular/http';
 import { TimePage } from '../pages/time/time';
 import { CountdownPage } from '../pages/countdown/countdown';
+import { ResultsListPage } from '../pages/results-list/results-list';
+import { PlayingBoxComponent } from '../components/playing-box/playing-box';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { CountdownPage } from '../pages/countdown/countdown';
     InicioPage,
     ResultsPage,
     TimePage,
-    CountdownPage
+    CountdownPage,
+    ResultsListPage,
+    PlayingBoxComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +49,9 @@ import { CountdownPage } from '../pages/countdown/countdown';
     InicioPage,
     ResultsPage,
     TimePage,
-    CountdownPage
+    CountdownPage,
+    ResultsListPage,
+    PlayingBoxComponent
   ],
   providers: [
     StatusBar,

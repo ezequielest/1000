@@ -1,0 +1,28 @@
+page-results-list {
+
+    ion-content{
+        background-image: url('../../assets/imgs/back1.jpg');
+        background-size: cover;
+        color:#fff;
+    }
+
+    .correct{
+        background: green !important;
+        color:#fff !important;
+    }
+    
+    
+    .incorrect{
+        background: red !important;
+        color:#fff !important;
+    }
+
+    .item-md{
+        background:rgba(12, 5, 20, 0.6)
+    }
+
+    ion-label{
+        font-size: 1.3em;
+        color:#fff;
+    }
+}

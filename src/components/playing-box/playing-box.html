@@ -1,0 +1,14 @@
+<ion-list>
+  <ion-item padding>
+    <ion-label margin-top floating>{{word}}</ion-label>
+    <ion-input type="text" #palabra (keyup.enter)="verificResult(palabra.value)" [(ngModel)]="defaultValue"></ion-input>
+  </ion-item>
+  <ion-item>
+    <button color="secondary" ion-button full large (click)="verificResult(palabra.value)"><span  class="content-button">Próxima</span></button>
+  </ion-item>
+</ion-list>
+
+<!--<br><br>
+Pista
+<div [innerHTML]="pista"></div>
+-->
